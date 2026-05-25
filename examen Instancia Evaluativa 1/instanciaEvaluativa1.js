@@ -44,10 +44,10 @@ while (continuarRegistro) {
                 libros.forEach(function (titulo, indice) {
                     mostrarLibros += (indice + 1) + ". " + titulo + ". \n";
                 });
-                alert(mostrarLibros);                   
+                mostrarLibros += "\n Ingresa el número del libro que deseas eliminar.";
                                                                     // *   Pide el *número* del libro a eliminar. Ajusta para el índice.
 
-                let indiceEliminar = Number(prompt("Ingresa el número del libro que deseas eliminar.")) - 1;
+                let indiceEliminar = Number(prompt(mostrarLibros)) - 1;
                 if (indiceEliminar >= 0 && indiceEliminar < libros.length) {
                     let libroEliminado = libros.splice(indiceEliminar, 1);              // *   Valida el índice. Si es válido, usa `splice()` para eliminarlo.
                     alert("Eliminaste " + libroEliminado + " de tu inventario.");       // *   `alert()` de confirmación o error.
